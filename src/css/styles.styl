@@ -1,0 +1,10 @@
+@value colors: './colors.css';
+@value first second third from colors;
+@value fourth from colors
+
+.title 
+  composes: title from './mixins.css'
+  color: first
+
+  h1
+    color: fourth

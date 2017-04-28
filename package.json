@@ -1,0 +1,19 @@
+{
+  "name": "nunjucks_postcss",
+  "version": "1.0.0",
+  "description": "A Boilerplate for using PostCSS Modules with Nunjucks templating",
+  "author": "Joseph Snell",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.8",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-postcss": "^6.4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-stylus": "^2.6.0",
+    "postcss-modules": "^0.6.4",
+    "run-sequence": "^1.2.2"
+  }
+}
