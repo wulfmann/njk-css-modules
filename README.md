@@ -1,4 +1,4 @@
-# njk-css-modules [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
+# njk-css-modules [![forthebadge](http://forthebadge.com/images/badges/no-ragrets.svg)](http://forthebadge.com)
 
 This repo contains the source code that accompanies this blog post:
 

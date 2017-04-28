@@ -42,7 +42,7 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch('src/css/**/*', ['html']);
     gulp.watch('src/html/**/*', ['html']);
-    gulp.watch(paths.html.src).on('change', reload);
+    gulp.watch('dist/**/*.+(html|json)', reload);
 });
 
 function getJsonFromCssModules(cssFileName, json) {
@@ -67,14 +67,14 @@ gulp.task('styles', function () {
     ];
 
 	return gulp.src(paths.css.src)
-	.pipe(stylus())
-	.pipe(postcss(plugins))
-	.pipe(gulp.dest(paths.css.dest))
-	.pipe(browserSync.stream());
+		.pipe(stylus())
+		.pipe(postcss(plugins))
+		.pipe(gulp.dest(paths.css.dest))
+		.pipe(browserSync.stream());
 });
 
 /* HTML Task */
-nunjucksOptions = {
+var nunjucksOptions = {
     path: [paths.html.src, paths.html.templates],
     data: {
     	className: getClass
@@ -83,20 +83,19 @@ nunjucksOptions = {
 
 gulp.task('html', ['styles'], function () {
 	return gulp.src(paths.html.src)
-	.pipe(nunjucksRender(nunjucksOptions))
-	.pipe(gulp.dest(paths.html.dest));
+		.pipe(nunjucksRender(nunjucksOptions))
+		.pipe(gulp.dest(paths.html.dest));
 });
 
 /* Clean Task */
 gulp.task('clean', function(cb) {
 	return gulp.src('dist/**/*', {read: false})
-	.pipe(clean());
-	cb(err);
+		.pipe(clean());
 });
 
 /* Build Task */
 gulp.task('build', function (cb) {
-  runSequence('clean', ['html', 'styles'], cb)
+  runSequence('clean', ['html'], cb)
 });
 
 gulp.task('default', ['serve']);
