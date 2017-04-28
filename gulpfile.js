@@ -40,7 +40,7 @@ gulp.task('serve', ['build'], function() {
         }
     });
 
-    gulp.watch('src/css/**/*', ['styles']);
+    gulp.watch('src/css/**/*', ['html']);
     gulp.watch('src/html/**/*', ['html']);
     gulp.watch(paths.html.src).on('change', reload);
 });
